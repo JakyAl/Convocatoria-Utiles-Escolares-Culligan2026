@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocatoria: Apoyo de Útiles Escolares 2026-2027</title>
+    <!-- Importar tipografía Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colores principales */
+            --azul-rey: #2968FE;
+            --azul-marino: #000E2E;
+            
+            /* Colores secundarios */
+            --verde: #6BFFC6;
+            --morado: #BC75FF;
+            --amarillo: #EFFF33;
+            --azul-celeste: #29F1FE;
+            
+            /* Neutros */
+            --blanco: #FFFFFF;
+            --fondo: #F4F7FC;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--fondo);
+            color: var(--azul-marino);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            background-color: var(--blanco);
+            max-width: 700px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 14, 46, 0.06);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- ESTILO INSPIRADO EN IMAGEN 1 (Header Limpio y Geométrico) --- */
+        .header {
+            padding: 60px 40px 40px;
+            position: relative;
+            background: var(--blanco);
+        }
+
+        .header-year {
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--azul-rey);
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--azul-marino);
+            max-width: 400px;
+            line-height: 1.2;
+        }
+
+        /* Figuras geométricas inspiradas en los "globos de texto" de la imagen 1 */
+        .shape-1, .shape-2 {
+            position: absolute;
+            background-color: var(--verde);
+            border-radius: 4px;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+        }
+
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 40px;
+            right: 80px;
+            transform: rotate(-15deg);
+            opacity: 0.9;
+        }
+
+        .shape-2 {
+            width: 60px;
+            height: 60px;
+            top: 80px;
+            right: 40px;
+            transform: rotate(15deg) scaleX(-1);
+            background-color: var(--azul-celeste);
+            opacity: 0.8;
+        }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .content {
+            padding: 0 40px 40px;
+        }
+
+        .intro {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        /* --- ESTILO INSPIRADO EN IMAGEN 2 (Bloques Chevron) --- */
+        .chevron-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Línea vertical gris de fondo (como en la imagen 2) */
+        .chevron-list::before {
+            content: '';
+            position: absolute;
+            left: 200px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E2E8F0;
+            z-index: 0;
+        }
+
+        .chevron-row {
+            display: flex;
+            align-items: center;
+            min-height: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .chevron-label {
+            color: var(--blanco);
+            width: 220px;
+            height: 100%;
+            min-height: 80px;
+            padding: 15px 30px 15px 20px;
+            font-weight: 800;
+            font-size: 20px;
+            /* Forma de flecha */
+            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .chevron-label .icon {
+            font-size: 24px;
+        }
+
+        .chevron-label.blue {
+            background-color: var(--azul-rey);
+        }
+
+        .chevron-label.purple {
+            background-color: var(--morado);
+        }
+
+        .chevron-text {
+            padding-left: 25px;
+            font-size: 15px;
+            color: var(--azul-marino);
+            font-weight: 500;
+        }
+
+        .chevron-text strong.blue-text {
+            color: var(--azul-rey);
+            font-weight: 800;
+        }
+
+        .chevron-text strong.purple-text {
+            color: var(--morado);
+            font-weight: 800;
+        }
+
+        /* --- FECHA Y BOTÓN --- */
+        .action-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .deadline {
+            background-color: var(--amarillo);
+            color: var(--azul-marino);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: var(--azul-rey);
+            color: var(--blanco);
+            text-decoration: none;
+            padding: 18px 45px;
+            font-size: 18px;
+            font-weight: 800;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-marino);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 14, 46, 0.15);
+        }
+
+        /* --- PRIVACIDAD --- */
+        .privacidad {
+            font-size: 12px;
+            color: #718096;
+            text-align: center;
+            border-top: 1px solid #E2E8F0;
+            padding-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* --- NUEVO ESPACIO INFERIOR --- */
+        .espacio-inferior {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        .img-pequena {
+            max-width: 150px; /* Tamaño máximo para que se mantenga pequeña */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 14, 46, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .img-pequena:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            .header { padding: 40px 20px 20px; }
+            .content { padding: 0 20px 30px; }
+            
+            .header-year { font-size: 48px; }
+            .header-title { font-size: 22px; }
+            
+            .shape-1 { right: 20px; width: 60px; height: 60px; }
+            .shape-2 { right: 10px; top: 90px; width: 40px; height: 40px; }
+
+            .chevron-list::before { display: none; }
+            
+            .chevron-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .chevron-label {
+                width: 100%;
+                min-height: 50px;
+                clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+            }
+
+            .chevron-text {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header (Inspiración Imagen 1) -->
+        <div class="header">
+            <div class="shape-1"></div>
+            <div class="shape-2"></div>
+            <div class="header-year">2026-2027</div>
+            <h1 class="header-title">Convocatoria: Apoyo de Útiles Escolares</h1>
+        </div>
+
+        <div class="content">
+            <!-- Introducción -->
+            <p class="intro">
+                Con el propósito de preparar la entrega del Apoyo de Útiles Escolares, te invitamos a completar el siguiente formulario <strong>únicamente si tienes hijos que cursarán Primaria o Secundaria</strong> durante el ciclo escolar 2026-2027.
+            </p>
+
+            <!-- Lista Chevron (Inspiración Imagen 2) -->
+            <div class="chevron-list">
+                <!-- Requisito -->
+                <div class="chevron-row">
+                    <div class="chevron-label blue">
+                        Requisito <span class="icon">📝</span>
+                    </div>
+                    <div class="chevron-text">
+                        Este beneficio aplica para hijos de colaboradores que acrediten un <strong class="blue-text">promedio mínimo de 8.0</strong> durante el ciclo escolar correspondiente.
+                    </div>
+                </div>
+
+                <!-- Importante -->
+                <div class="chevron-row">
+                    <div class="chevron-label purple">
+                        Importante <span class="icon">⚠️</span>
+                    </div>
+                    <div class="chevron-text">
+                        Si registrarás a más de un hijo(a), deberás llenar un <strong class="purple-text">formulario independiente</strong> por cada uno de ellos, ya que la información será validada de manera individual.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="action-area">
+                <div class="deadline">
+                    📅 Fecha límite para realizar tu registro: lunes 13 de julio de 2026
+                </div>
+                
+                <a href="https://forms.cloud.microsoft/e/6cC3pf5Qck" target="_blank" class="btn">
+                    Completar formulario
+                </a>
+            </div>
+
+            <!-- Privacidad -->
+        <div class="privacidad">
+            La información proporcionada será utilizada exclusivamente para la administración y validación de este beneficio, por lo que te solicitamos verificar que los datos capturados sean correctos y completos.
+        </div>
+
+        <!-- Nuevo espacio / campo inferior -->
+        <div class="espacio-inferior">
+            <!-- Si la imagen está en tu PC, pon el nombre del archivo aquí (ej. logo.png) y guárdala en la misma carpeta que este archivo HTML -->
+            <img src="Culligan_logotype-tm-sm-blu.png" alt="Imagen representativa" class="img-pequena">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
